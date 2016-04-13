@@ -3,3 +3,4 @@ index.php
 php.ini
 /vendor/
 composer.lock
+php_errors.log
