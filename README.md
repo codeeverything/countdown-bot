@@ -11,7 +11,10 @@ The matches are only as good as the dictionary available, and here I use a [58,0
 
 ### Run me
 
-```$ php countdown.php somechars```
+```
+$ cd src
+$ php countdown.php somechars
+```
 
 Running without an argument will use a random string of 9 characters.
 
