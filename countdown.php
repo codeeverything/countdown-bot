@@ -13,6 +13,37 @@ function generateRandomString($length = 9) {
     return $randomString;
 }
 
+function getScrabbleScore($string, $scores) {
+    $chars = str_split($string);
+    $score = 0;
+    foreach ($chars as $k => $char) {
+        $score += $scores[$char];
+    }
+    
+    return $score;
+}
+
+$scrabbleScores = [
+    1 => 'aeiounrostl',
+    2 => 'gd',
+    3 => 'mbcp',
+    4 => 'yfvwh',
+    5 => 'k',
+    8 => 'jx',
+    10 => 'z',
+];
+
+// get scrabble scores
+$scores = [];
+foreach ($scrabbleScores as $score => $letters) {
+    $letters = str_split($letters);
+    $letters = array_fill_keys($letters, $score);
+    $scores = array_merge($scores, $letters);
+}
+
+// print_r(getScrabbleScore('abcgtarfa', $scores));
+// die();
+
 $powerset = new Powerset();
 
 // dictionary
@@ -57,6 +88,11 @@ foreach ($powerset as $subset) {
 
 // remove duplicates
 $candidates = array_unique($candidates);
+
+foreach ($candidates as &$candidate) {
+    $candidate .= ', scrabble score: ' . getScrabbleScore($candidate, $scores);
+}
+
 usort($candidates, function ($a, $b){
     return strlen($b) - strlen($a);
 });
