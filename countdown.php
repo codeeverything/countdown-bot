@@ -13,23 +13,13 @@ echo "\r\nDictionary load time: $time ms\r\n";
 
 $start = microtime(true);
 
-// sorted dictionary of characters
-// TODO: The dictionary generation should do this
-$tree = array();
-foreach ($dic as $k => $word) {
-    $letters = str_split($word);
-    sort($letters);
-    $sorted = join('', $letters);
-    $tree[$sorted][] = $word;
-}
-
 $time = ((microtime(true) - $start) * 1000); // ms
 echo "\r\nDictionary processing time: $time ms\r\n";
 
 
 $start = microtime(true);
 
-$maxResults = 10;
+$maxResults = isset($argv[2]) ? $argv[2] : 10;
 
 // candidate words
 $candidates = [];
@@ -52,10 +42,10 @@ foreach ($powerset as $window) {
     $chars = join('', $window);
     
     // if matched, then merge the words from the dictionary into the candidates array
-    if (isset($tree[$chars])) {
-        $candidates = array_merge($candidates, $tree[$chars]);
+    if (isset($dic[$chars])) {
+        $candidates = array_merge($candidates, $dic[$chars]);
         
-        if (count($candidates) >= $maxResults) {
+        if (count($candidates) >= $maxResults * 2) {
             break;
         }
     }
@@ -63,9 +53,12 @@ foreach ($powerset as $window) {
 
 // remove duplicates
 $candidates = array_unique($candidates);
+usort($candidates, function ($a, $b){
+    return strlen($b) - strlen($a);
+});
 
 // put longest matches at the bottom of the list (easier reading in command line output)
-$candidates = array_reverse($candidates);
+$candidates = array_reverse(array_slice($candidates, 0, $maxResults));
 
 $time = ((microtime(true) - $start) * 1000); // ms
 
