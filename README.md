@@ -1,21 +1,21 @@
 # Countdown Bot
 
-A solver for the conundrums possed on the popular UK Channel 4 TV show ["Countdown"](www.channel4.com/programmes/countdown) (or, more risque, the [8 Out of 10 Cats does Countdown](www.channel4.com/programmes/8-out-of-10-cats-does-countdown
+A solver for the conundrums posed on the popular UK Channel 4 TV show ["Countdown"](www.channel4.com/programmes/countdown) (or, more risque, the [8 Out of 10 Cats does Countdown](www.channel4.com/programmes/8-out-of-10-cats-does-countdown
 ) variant).
 
-More generally this solves the problem of taking a random string on characters and finding the words that can created from them, ordered by length (longest being best).
+More generally this solves the problem of taking a random string of characters and finding the words that can created from them, ordered by length (longest being best).
 
 This more general case can be used to solve anagrams, or as a basis for a spell checker (with some distance measurement such as the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance), for example).
 
-The matches are only as good as the dictionary available, and here I use a [58,000 English word list](http://www.mieliestronk.com/wordlist.html), with only entries of length <= 9 (the max allowed in Countdown). It's not intended to be exhaustive, but does work well for most test cases.
+The matches are only as good as the dictionary available, and here I use a [58,000 English word list](http://www.mieliestronk.com/wordlist.html), with only entries of length <= 9 (the max allowed in Countdown), compiled into the dictionary used for lookups. It's not intended to be exhaustive, but does work well for most test cases.
 
 ### Run me
 
 ```$ php countdown.php somechars```
 
-Running without an argument will use the string 'hotdogbun'.
+Running without an argument will use a random string of 9 characters.
 
-Strings are truncated to 9 chars in length, the max in a game of Countdown.
+Strings are truncated to 9 chars in length and lower-cased, the max in a game of Countdown.
 
 ### TODO
 
@@ -25,7 +25,7 @@ Strings are truncated to 9 chars in length, the max in a game of Countdown.
 
 I like Countdown, both the letters and numbers rounds, and my hat goes off to anyone who is even moderately good at it - I'm certainly not!
 
-The rules are quite simple: select a series of 9 vowels and consonants, then start the clock and find the longest word you can in 30 seconds. The winner is the team with the longest verifiable word.
+In the letters round the rules are quite simple: select a series of 9 vowels and consonants, then start the clock and find the longest word you can in 30 seconds. The winner is the team with the longest verifiable word.
 
 #### Poor performance
 
