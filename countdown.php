@@ -30,10 +30,10 @@ sort($searchArray);
 $powerset = $powerset->power_set($searchArray);
 
 // check each powerset entry against the dictionary
-foreach ($powerset as $window) {
+foreach ($powerset as $subset) {
     // the dictionary is sorted, so sort this set too
-    sort($window);
-    $chars = join('', $window);
+    sort($subset);
+    $chars = join('', $subset);
     
     // if matched, then merge the words from the dictionary into the candidates array
     if (isset($dic[$chars])) {
