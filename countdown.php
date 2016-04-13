@@ -13,12 +13,6 @@ echo "\r\nDictionary load time: $time ms\r\n";
 
 $start = microtime(true);
 
-$time = ((microtime(true) - $start) * 1000); // ms
-echo "\r\nDictionary processing time: $time ms\r\n";
-
-
-$start = microtime(true);
-
 $maxResults = isset($argv[2]) ? $argv[2] : 10;
 
 // candidate words
