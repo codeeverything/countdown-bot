@@ -3,6 +3,16 @@
 // the powerset advantage!
 include_once 'powerset.php';
 
+function generateRandomString($length = 9) {
+    $characters = 'abcdefghijklmnopqrstuvwxyz';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
 $powerset = new Powerset();
 
 // dictionary
@@ -19,7 +29,7 @@ $maxResults = isset($argv[2]) ? $argv[2] : 10;
 $candidates = [];
 
 // the search space
-$search = isset($argv[1]) ? substr($argv[1], 0, 9) : 'hotdogbun';
+$search = isset($argv[1]) ? substr($argv[1], 0, 9) : generateRandomString();
 $search = strtolower($search);  // always lowercase
 
 // search space as an array (set)
@@ -58,6 +68,7 @@ $time = ((microtime(true) - $start) * 1000); // ms
 
 print_r($candidates);
 
+echo "\r\nSearch space: $search\r\n";
 echo "\r\nSearch time: $time ms\r\n";
 
 // TODO: Put in Composer and add a after-install script to gen the dictionary rather than include in the repo
