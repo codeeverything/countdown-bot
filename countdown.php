@@ -65,3 +65,5 @@ $time = ((microtime(true) - $start) * 1000); // ms
 print_r($candidates);
 
 echo "\r\nSearch time: $time ms\r\n";
+
+// TODO: Put in Composer and add a after-install script to gen the dictionary rather than include in the repo
