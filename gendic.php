@@ -1,5 +1,6 @@
 <?php
 // generate a dictionary from a wordlist source
+// word list sourced from: http://www.mieliestronk.com/wordlist.html
 
 $words = file_get_contents('source_data/corncob_lowercase.txt');
 
