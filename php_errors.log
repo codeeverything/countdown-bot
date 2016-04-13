@@ -1,0 +1,9 @@
+[13-Apr-2016 16:47:30 UTC] PHP Fatal error:  Class 'Powerset' not found in /home/ubuntu/workspace/src/countdown.php on line 47
+[13-Apr-2016 16:47:31 UTC] PHP Stack trace:
+[13-Apr-2016 16:47:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/countdown.php:0
+[13-Apr-2016 16:47:56 UTC] PHP Fatal error:  Class 'PowerSet' not found in /home/ubuntu/workspace/src/countdown.php on line 44
+[13-Apr-2016 16:47:56 UTC] PHP Stack trace:
+[13-Apr-2016 16:47:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/countdown.php:0
+[13-Apr-2016 16:48:27 UTC] PHP Fatal error:  Class 'Countdown\PowerSet' not found in /home/ubuntu/workspace/src/countdown.php on line 46
+[13-Apr-2016 16:48:27 UTC] PHP Stack trace:
+[13-Apr-2016 16:48:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/countdown.php:0

@@ -1,5 +1,7 @@
 <?php
 
+namespace Countdown;
+
 /**
  * Calculates and returns the Power Set of a given Set
  * 
@@ -8,7 +10,7 @@
  * @version 0.1
  * 
  */
-class Powerset {
+class PowerSet {
   
   /**
    * Get the subset of a set

@@ -1,7 +1,9 @@
 <?php
 
 // the powerset advantage!
-include_once 'powerset.php';
+include_once 'PowerSet.php';
+
+use Countdown\PowerSet;
 
 function generateRandomString($length = 9) {
     $characters = 'abcdefghijklmnopqrstuvwxyz';
@@ -41,10 +43,7 @@ foreach ($scrabbleScores as $score => $letters) {
     $scores = array_merge($scores, $letters);
 }
 
-// print_r(getScrabbleScore('abcgtarfa', $scores));
-// die();
-
-$powerset = new Powerset();
+$powerset = new PowerSet();
 
 // dictionary
 $start = microtime(true);
