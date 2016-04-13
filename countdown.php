@@ -36,6 +36,7 @@ $candidates = [];
 
 // the search space
 $search = isset($argv[1]) ? substr($argv[1], 0, 9) : 'hotdogbun';
+$search = strtolower($search);  // always lowercase
 
 // search space as an array (set)
 $searchArray = str_split($search);
