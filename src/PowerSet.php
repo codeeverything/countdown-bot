@@ -51,7 +51,7 @@ class PowerSet {
       
       $i = 0;
       while (true) {
-        if ($binary[$i]) {
+        if (isset($binary[$i]) && $binary[$i]) {
           $binary[$i] = false;
           $i += 1;
         } else {

@@ -48,7 +48,7 @@ class Countdown {
         $this->dic = unserialize(file_get_contents(__DIR__ . '/data/dic.dat'));
     }
     
-    public function solve($search, $maxResults) {
+    public function solve($search, $maxResults = 10) {
         if (!$maxResults) {
             $maxResults = 10;
         }
@@ -63,7 +63,7 @@ class Countdown {
         $candidates = [];
         
         // the search space
-        $search = strtolower($search);  // always lowercase
+        $search = substr(strtolower($search), 0, 9);  // always lowercase
         
         // search space as an array (set)
         $searchArray = str_split($search);
