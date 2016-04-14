@@ -4,3 +4,4 @@ php.ini
 /vendor/
 composer.lock
 php_errors.log
+countdown_test.php

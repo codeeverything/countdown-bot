@@ -2,7 +2,7 @@
 // generate a dictionary from a wordlist source
 // word list sourced from: http://www.mieliestronk.com/wordlist.html
 
-$words = file_get_contents('source_data/corncob_lowercase.txt');
+$words = file_get_contents(__DIR__ . '/source_data/corncob_lowercase.txt');
 
 $words = explode("\r\n", $words);
 
@@ -24,4 +24,4 @@ foreach ($words as $k => $word) {
 
 $data = serialize($tree);
 
-file_put_contents('data/dic.dat', $data);
+file_put_contents(__DIR__ . '/data/dic.dat', $data);
