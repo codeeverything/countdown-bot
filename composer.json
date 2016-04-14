@@ -20,5 +20,9 @@
         "psr-4": {
             "Countdown\\Test\\": "tests/"
         }
+    },
+    "scripts": {
+        "post-update-cmd": "Countdown\\GenDic::generate",
+        "post-install-cmd": "Countdown\\GenDic::generate"
     }
 }

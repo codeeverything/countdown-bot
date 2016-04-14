@@ -5,3 +5,4 @@ php.ini
 composer.lock
 php_errors.log
 countdown_test.php
+src/data/dic.dat
