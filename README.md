@@ -34,7 +34,7 @@ In the letters round the rules are quite simple: select a series of 9 vowels and
 
 Try as I might I personally struggle to rise above the 3 or 4 letter word mark on most occasions, it's frustrating but on the other hand it's led me to think about the problem and a way to solve it in code - so it's not all bad!
 
-If you're similarly frustrated, or just curious, then read on. Or, if you just want to see results take a look at [countdown.codeeverything.com](http://countdown.codeeverything.com) and try some conundrums out for yourself.
+If you're similarly frustrated, or just curious, then read on. Or, if you just want to see results take a look at [countdown.codeeverything.com/index.html](http://countdown.codeeverything.com/index.html) and try some conundrums out for yourself.
 
 #### Beating the clock: The dictionary
 
